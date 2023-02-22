@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>audio name</th>
+        <th>audio image</th>
+        <th>audio file</th>
+    </tr>
+    {% for i,j,k in mylist %}
+    <tr>
+        <td>{{i}}</td>
+        <td>
+            <img src="{% static j %}" height="200px" width="200px">
+        </td>
+        <td>
+            <audio controls>
+                <source src="{% static k %}">
+            </audio>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
